@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Details</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Quiz Details</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="quizzes.html">All Quizzes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div id="loading-container" class="loading">Loading quiz details...</div>
+            
+            <div id="quiz-details" class="hidden">
+                <div class="quiz-header">
+                    <h2 id="quiz-title"></h2>
+                    <p id="quiz-type"></p>
+                    <div class="actions">
+                        <button id="edit-button" class="btn btn-secondary">Edit Quiz</button>
+                        <button id="delete-button" class="btn btn-danger">Delete Quiz</button>
+                        <button id="back-button" class="btn">Back to Quizzes</button>
+                    </div>
+                </div>
+                
+                <div class="question-list" id="questions-container">
+                    <!-- Questions will be loaded here -->
+                </div>
+            </div>
+            
+            <div id="message" class="message hidden"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Quiz Application</p>
+    </footer>
+
+    <script src="js/quiz-details.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Details</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <a href="index.html">Quiz App</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="create-quiz.html">Create Quiz</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div id="quiz-details-container">
+                <!-- Quiz details will be rendered here -->
+                <p>Loading quiz details...</p>
+            </div>
+        </div>
+        
+        <!-- Delete confirmation dialog -->
+        <div id="delete-confirmation" class="modal">
+            <div class="modal-content">
+                <h2>Delete Quiz</h2>
+                <p>Are you sure you want to delete this quiz? This action cannot be undone.</p>
+                <div class="modal-actions">
+                    <button id="confirm-delete" class="btn btn-danger">Delete</button>
+                    <button id="cancel-delete" class="btn btn-secondary">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Quiz App. All rights reserved.</p>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/quiz-details.js"></script>
+</body>
+</html>
+<li><a href="feedback.html">Feedback</a></li>
+<div class="feedback-link">
+    <p>Did you enjoy this quiz? <a href="feedback.html?userId=YOUR_USER_ID">Submit your feedback</a></p>
+</div>
+<div id="feedback-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Submit Feedback</h2>
+        
+        <div id="modal-feedback-success" class="alert alert-success" style="display: none;">
+            Your feedback has been submitted successfully. Thank you!
+        </div>
+        
+        <div id="modal-feedback-error" class="alert alert-error" style="display: none;">
+            <!-- Error messages will be displayed here -->
+        </div>
+        
+        <form id="modal-feedback-form" class="form">
+            <input type="hidden" id="modal-user-id" name="userId" value="680764f27d4beb679205a4dc">
+            
+            <div class="form-group">
+                <label for="modal-feedback-content">Your Feedback</label>
+                <textarea id="modal-feedback-content" name="content" rows="4" placeholder="Share your thoughts about this quiz..." required></textarea>
+            </div>
+            
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-secondary close-modal-btn">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz | CyberDefender</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>CyberDefender</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="attacks.html">Attacks</a></li>
+                <li><a href="quizzes.html" class="active">Quizzes</a></li>
+                <li><a href="feedbacks.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="quiz-section">
+            <div class="container">
+                <div id="quiz-container">
+                    <!-- Quiz content will be populated here by JavaScript -->
+                    <div class="loading">Loading quiz...</div>
+                </div>
+                
+                <div class="actions" id="nav-actions">
+                    <a href="quizzes.html" class="btn btn-secondary">Back to Quizzes</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CyberDefender. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/quiz-data.js"></script>
+    <script src="js/quiz-details.js"></script>
+</body>
+</html>

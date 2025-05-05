@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Attack Report</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="users.html">Users</a></li>
+                <li><a href="attacks.html" class="active">Report Attack</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container">
+            <h1>Report New Attack</h1>
+            <form id="attackForm">
+                <div class="form-group">
+                    <label for="attackType">Attack Type:</label>
+                    <select id="attackType" required>
+                        <option value="">-- Select Type --</option>
+                        <option value="Defenders">Defenders</option>
+                        <option value="Midfielders">Midfielders</option>
+                        <option value="Attackers">Attackers</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" rows="5" required></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Submit Report</button>
+                </div>
+            </form>
+            <div id="message" class="message"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Attack Reporting System</p>
+    </footer>
+
+    <script src="js/attacks.js"></script>
+</body>
+</html>
+<section class="container" style="margin-top: 30px;">
+    <h2>Attack Reports</h2>
+    <div id="attacksList">
+        <p>Loading attacks...</p>
+    </div>
+</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attack Reports</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="users.html">Users</a></li>
+                <li><a href="attacks.html" class="active">Attacks</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container">
+            <h1>Report New Attack</h1>
+            <form id="attackForm">
+                <div class="form-group">
+                    <label for="attackType">Attack Type:</label>
+                    <select id="attackType" required>
+                        <option value="">-- Select Type --</option>
+                        <option value="Defenders">Defenders</option>
+                        <option value="Defenders 1">Defenders 1</option>
+                        <option value="Midfielders">Midfielders</option>
+                        <option value="Attackers">Attackers</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" rows="5" required></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Submit Report</button>
+                </div>
+            </form>
+            <div id="message" class="message"></div>
+        </section>
+
+        <section class="container" style="margin-top: 30px;">
+            <h2>Attack Reports</h2>
+            <div id="attacksList">
+                <p>Loading attacks...</p>
+            </div>
+            
+            <!-- Pagination Controls -->
+            <div id="paginationControls" class="pagination-controls">
+                <div class="pagination-info">
+                    <span id="pageInfo">Page 1 of 1</span>
+                    <select id="itemsPerPage">
+                        <option value="5">5 per page</option>
+                        <option value="10" selected>10 per page</option>
+                        <option value="25">25 per page</option>
+                        <option value="50">50 per page</option>
+                    </select>
+                </div>
+                <div class="pagination-buttons">
+                    <button id="prevPage" class="btn btn-sm btn-secondary" disabled>Previous</button>
+                    <div id="pageNumbers" class="page-numbers"></div>
+                    <button id="nextPage" class="btn btn-sm btn-secondary" disabled>Next</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Attack Reporting System</p>
+    </footer>
+
+    <script src="js/attacks.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Security Attacks | Learn & Defend</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>CyberDefender</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="attacks.html" class="active">Attacks</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="feedbacks.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="attacks-section">
+            <div class="container">
+                <h2>Common Cyber Attacks</h2>
+                <p>Learn about various cyber attacks and how to defend against them.</p>
+                
+                <div id="attacks-container">
+                    <!-- Attack cards will be populated here by JavaScript -->
+                    <div class="loading">Loading attacks...</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CyberDefender. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/attacks.js"></script>
+</body>
+</html>

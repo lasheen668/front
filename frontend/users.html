@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users List</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="users-container">
+            <header class="page-header">
+                <h1>Users</h1>
+                <div class="header-actions">
+                    <a href="index.html" class="btn btn-primary">Add New User</a>
+                </div>
+            </header>
+
+            <div class="filters">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search users...">
+                    <button id="searchBtn" class="btn btn-secondary">Search</button>
+                </div>
+                <div class="limit-selector">
+                    <label for="limitSelect">Show:</label>
+                    <select id="limitSelect">
+                        <option value="5">5 per page</option>
+                        <option value="10" selected>10 per page</option>
+                        <option value="25">25 per page</option>
+                        <option value="50">50 per page</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="loadingIndicator" class="loading-indicator">
+                <div class="spinner"></div>
+                <p>Loading users...</p>
+            </div>
+
+            <div id="errorMessage" class="error-message"></div>
+
+            <div class="users-table-container">
+                <table id="usersTable" class="users-table">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Phone</th>
+                            <th>Role</th>
+                            <th>Created At</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTableBody">
+                        <!-- User rows will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="emptyState" class="empty-state">
+                <p>No users found</p>
+            </div>
+
+            <div class="pagination" id="pagination">
+                <!-- Pagination controls will be populated here -->
+            </div>
+        </div>
+    </div>
+    <script src="js/users.js"></script>
+</body>
+</html>
