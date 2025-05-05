@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Create Account</h1>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="userName">Full Name</label>
+                    <input type="text" id="userName" name="userName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" required>
+                    <small>Password must contain at least 8 characters including uppercase, lowercase, numbers, and special characters</small>
+                </div>
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <select id="role" name="role" required>
+                        <option value="">Select a role</option>
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Sign Up</button>
+            </form>
+            <div id="message" class="message"></div>
+        </div>
+    </div>
+    <script src="js/signup.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Quiz Application</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="create-quiz.html">Create Quiz</a></li>
+                <li><a href="quizzes.html">All Quizzes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="welcome-section">
+                <h2>Welcome to Quiz Application</h2>
+                <p>Create and manage interactive quizzes for learning and assessment.</p>
+                
+                <div class="action-buttons">
+                    <a href="create-quiz.html" class="btn btn-primary">Create New Quiz</a>
+                    <a href="quizzes.html" class="btn btn-secondary">View All Quizzes</a>
+                </div>
+            </div>
+            
+            <div class="features-section">
+                <h3>Features</h3>
+                <div class="features-grid">
+                    <div class="feature">
+                        <h4>Create Custom Quizzes</h4>
+                        <p>Create quizzes with multiple choice questions, set correct answers, and customize options.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>Manage Your Content</h4>
+                        <p>Edit, update, or remove your quizzes as needed to keep your content current.</p>
+                    </div>
+                    <div class="feature">
+                        <h4>Share Knowledge</h4>
+                        <p>Share your quizzes with others for educational purposes or assessment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Quiz Application</p>
+    </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <a href="index.html">Quiz App</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="create-quiz.html">Create Quiz</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <div class="container">
+                <h1>Test Your Knowledge</h1>
+                <p>Create, share, and take quizzes on any topic. Challenge yourself and others!</p>
+                <div class="hero-actions">
+                    <a href="quizzes.html" class="btn btn-primary">Browse Quizzes</a>
+                    <a href="create-quiz.html" class="btn btn-secondary">Create Quiz</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <section class="featured-section">
+                <h2>Featured Quizzes</h2>
+                <div id="featured-quizzes" class="quizzes-grid">
+                    <!-- Featured quizzes will be loaded here -->
+                    <p class="loading">Loading featured quizzes...</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Quiz App. All rights reserved.</p>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script>
+        // Simple script to load featured quizzes
+        document.addEventListener('DOMContentLoaded', async function() {
+            try {
+                const quizzes = await quizService.getAllQuizzes();
+                
+                // Just display the first 3 quizzes as featured
+                const featuredQuizzes = quizzes.slice(0, 3);
+                
+                const featuredContainer = document.getElementById('featured-quizzes');
+                
+                if (featuredQuizzes.length === 0) {
+                    featuredContainer.innerHTML = '<p>No quizzes available yet.</p>';
+                    return;
+                }
+                
+                const quizzesHTML = featuredQuizzes.map(quiz => `
+                    <div class="quiz-card">
+                        <h3 class="quiz-title">${quiz.title}</h3>
+                        <p class="quiz-description">${quiz.description || 'No description available'}</p>
+                        
+                        <div class="quiz-meta">
+                            <span class="quiz-category">${quiz.category || 'Uncategorized'}</span>
+                            <span class="quiz-questions">${quiz.questions?.length || 0} Questions</span>
+                        </div>
+                        
+                        <div class="quiz-actions">
+                            <a href="quiz-details.html?id=${quiz._id}" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                `).join('');
+                
+                featuredContainer.innerHTML = quizzesHTML;
+            } catch (error) {
+                console.error('Error loading featured quizzes:', error);
+                document.getElementById('featured-quizzes').innerHTML = `
+                    <p>Failed to load quizzes. Please try again later.</p>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
+<li><a href="feedback.html">Feedback</a></li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Training Platform</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="container">
+        <h1>Security Training Application</h1>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="attacks.html">Attacks</a></li>
+          <li><a href="quizzes.html">Quizzes</a></li>
+          <li><a href="feedbacks.html">Feedbacks</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Learn About Security Attacks</h2>
+      <p>Explore our comprehensive guide to common security attacks, their prevention methods, and test your knowledge with interactive quizzes.</p>
+      <div class="hero-buttons">
+        <a href="attacks.html" class="btn primary-btn">Explore Attacks</a>
+        <a href="quizzes.html" class="btn secondary-btn">Take Quizzes</a>
+      </div>
+    </section>
+    
+    <section class="featured-content">
+      <h3>Featured Content</h3>
+      <div class="featured-grid" id="featured-attacks">
+        <!-- Featured attacks will be loaded here -->
+        <div class="loading">Loading featured content...</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Security Training Platform</p>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
+document.addEventListener('DOMContentLoaded', function() {
+    loadFeaturedAttacks();
+    setupQuizCards();
+});
+
+function loadFeaturedAttacks() {
+    // Get a subset of attacks to feature on the homepage
+    api.getAllAttacks()
+        .then(attacks => {
+            // Just show the first 3 attacks as featured
+            const featuredAttacks = attacks.slice(0, 3);
+            displayFeaturedAttacks(featuredAttacks);
+        })
+        .catch(error => {
+            console.error('Error loading featured attacks:', error);
+            document.getElementById('featured-attacks').innerHTML = 
+                '<p class="error-message">Failed to load featured attacks. Please try again later.</p>';
+        });
+}
+
+function displayFeaturedAttacks(attacks) {
+    const container = document.getElementById('featured-attacks');
+    
+    if (!attacks || attacks.length === 0) {
+        container.innerHTML = '<p>No attacks found to feature.</p>';
+        return;
+    }
+    
+    let html = '<div class="attacks-grid">';
+    
+    attacks.forEach(attack => {
+        html += `
+            <div class="attack-card">
+                <h3>${attack.name}</h3>
+                <p>${attack.shortDescription}</p>
+                <a href="attack-details.html?id=${attack.id}" class="btn">Learn More</a>
+            </div>
+        `;
+    });
+    
+    html += '</div>';
+    html += '<div class="view-all"><a href="attacks.html" class="btn btn-primary">View All Attacks</a></div>';
+    
+    container.innerHTML = html;
+}
+
+function setupQuizCards() {
+    // Set up the "Start a Quiz" section
+    api.getAllQuizzes()
+        .then(quizzes => {
+            // Just show a couple of featured quizzes
+            const featuredQuizzes = quizzes.slice(0, 2);
+            displayFeaturedQuizzes(featuredQuizzes);
+        })
+        .catch(error => {
+            console.error('Error loading quizzes:', error);
+            document.getElementById('featured-quizzes').innerHTML = 
+                '<p class="error-message">Failed to load quizzes. Please try again later.</p>';
+        });
+}
+
+function displayFeaturedQuizzes(quizzes) {
+    const container = document.getElementById('featured-quizzes');
+    
+    if (!quizzes || quizzes.length === 0) {
+        container.innerHTML = '<p>No quizzes found.</p>';
+        return;
+    }
+    
+    let html = '<div class="quizzes-grid">';
+    
+    quizzes.forEach(quiz => {
+        html += `
+            <div class="quiz-card">
+                <h3>${quiz.title}</h3>
+                <p>${quiz.description}</p>
+                <p><small>${quiz.questions.length} questions</small></p>
+                <a href="quiz-details.html?id=${quiz.id}" class="btn">Start Quiz</a>
+            </div>
+        `;
+    });
+    
+    html += '</div>';
+    html += '<div class="view-all"><a href="quizzes.html" class="btn btn-primary">View All Quizzes</a></div>';
+    
+    container.innerHTML = html;
+}

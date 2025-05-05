@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>User Profile</h1>
+            <div id="profileInfo" class="profile-info">
+                <div class="profile-header">
+                    <h2 id="currentUserName">Loading...</h2>
+                    <p id="userPhone">Loading...</p>
+                    <p id="userRole">Loading...</p>
+                </div>
+            </div>
+            
+            <form id="updateForm">
+                <h3>Update Profile</h3>
+                <div class="form-group">
+                    <label for="userName">User Name</label>
+                    <input type="text" id="userName" name="userName" placeholder="Enter new username">
+                </div>
+                <button type="submit" class="submit-btn">Update Profile</button>
+            </form>
+            
+            <div id="message" class="message"></div>
+            
+            <div class="form-footer">
+                <button id="logoutBtn" class="secondary-btn">Logout</button>
+                <a href="dashboard.html" class="link-btn">Back to Dashboard</a>
+            </div>
+        </div>
+    </div>
+    <script src="js/profile.js"></script>
+</body>
+</html>

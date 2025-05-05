@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Quiz</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Edit Quiz</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="quizzes.html">All Quizzes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div id="loading-container" class="loading">Loading quiz data...</div>
+            
+            <form id="edit-quiz-form" class="hidden">
+                <div class="form-group">
+                    <label for="quiz-title">Quiz Title</label>
+                    <input type="text" id="quiz-title" name="title" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="quiz-type">Quiz Type</label>
+                    <input type="text" id="quiz-type" name="type" required>
+                </div>
+                
+                <div id="questions-container">
+                    <!-- Questions will be loaded here -->
+                </div>
+                
+                <button type="button" id="add-question" class="btn btn-secondary">Add Question</button>
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+                <button type="button" id="cancel-button" class="btn">Cancel</button>
+            </form>
+            
+            <div id="message" class="message hidden"></div>
+        </div>
+        
+        <!-- Question template (hidden) -->
+        <template id="question-template">
+            <div class="question-box">
+                <h3>Question <span class="question-number"></span></h3>
+                <div class="form-group">
+                    <label>Question Text</label>
+                    <input type="text" class="question-text" required>
+                </div>
+                <div class="options-container">
+                    <div class="option">
+                        <input type="text" class="option-text" placeholder="Option 1" required>
+                        <input type="radio" name="correct-answer" class="correct-answer" value="0" required>
+                        <label>Correct Answer</label>
+                    </div>
+                    <div class="option">
+                        <input type="text" class="option-text" placeholder="Option 2" required>
+                        <input type="radio" name="correct-answer" class="correct-answer" value="1">
+                        <label>Correct Answer</label>
+                    </div>
+                    <div class="option">
+                        <input type="text" class="option-text" placeholder="Option 3" required>
+                        <input type="radio" name="correct-answer" class="correct-answer" value="2">
+                        <label>Correct Answer</label>
+                    </div>
+                    <div class="option">
+                        <input type="text" class="option-text" placeholder="Option 4" required>
+                        <input type="radio" name="correct-answer" class="correct-answer" value="3">
+                        <label>Correct Answer</label>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-danger remove-question">Remove Question</button>
+            </div>
+        </template>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Quiz Application</p>
+    </footer>
+
+    <script src="js/edit-quiz.js"></script>
+</body>
+</html>

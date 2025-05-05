@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="user-details-container">
+            <div class="back-nav">
+                <a href="javascript:history.back()" class="back-btn">← Back</a>
+            </div>
+            
+            <h1>User Details</h1>
+            
+            <div id="loadingIndicator" class="loading-indicator">
+                <div class="spinner"></div>
+                <p>Loading user details...</p>
+            </div>
+            
+            <div id="errorMessage" class="error-message"></div>
+            
+            <div id="userDetails" class="user-details">
+                <!-- User details will be populated here -->
+            </div>
+            
+            <div class="related-data">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="attacks">Attacks</button>
+                    <button class="tab-btn" data-tab="quizzes">Quizzes</button>
+                </div>
+                
+                <div id="attacksTab" class="tab-content active">
+                    <h3>User Attacks</h3>
+                    <div id="attacksList" class="items-list">
+                        <!-- Attacks will be populated here -->
+                    </div>
+                </div>
+                
+                <div id="quizzesTab" class="tab-content">
+                    <h3>User Quizzes</h3>
+                    <div id="quizzesList" class="items-list">
+                        <!-- Quizzes will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/user-details.js"></script>
+</body>
+</html>

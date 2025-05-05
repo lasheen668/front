@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Feedbacks - Quiz App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <a href="index.html">Quiz App</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="create-quiz.html">Create Quiz</a></li>
+                <li><a href="feedback.html">Submit Feedback</a></li>
+                <li><a href="feedbacks.html" class="active">View Feedbacks</a></li>
+            </ul>
+            <li><a href="feedbacks.html">View Feedbacks</a></li>
+
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1>All Feedbacks</h1>
+                <a href="feedback.html" class="btn btn-primary">Submit New Feedback</a>
+            </div>
+            
+            <div class="filters">
+                <div class="search-box">
+                    <input type="text" id="search-feedback" placeholder="Search feedbacks...">
+                </div>
+            </div>
+
+            <div id="feedbacks-container" class="feedbacks-list">
+                <!-- Feedbacks will be rendered here -->
+                <p class="loading">Loading feedbacks...</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Quiz App. All rights reserved.</p>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/feedbacks.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Feedbacks</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="container">
+        <h1>Quiz Application</h1>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="quizzes.html">Quizzes</a></li>
+          <li><a href="feedbacks.html" class="active">Feedbacks</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>All Feedbacks</h2>
+    <div id="feedbacks-list">
+      <div class="loading">Loading feedbacks...</div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Quiz Application</p>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/feedbacks.js"></script>
+</body>
+</html>

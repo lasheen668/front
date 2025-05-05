@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Feedback - Quiz App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <a href="index.html">Quiz App</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="create-quiz.html">Create Quiz</a></li>
+                <li><a href="feedback.html" class="active">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1>Submit Feedback</h1>
+            </div>
+            
+            <div class="feedback-container">
+                <div id="feedback-success" class="alert alert-success" style="display: none;">
+                    Your feedback has been submitted successfully. Thank you!
+                </div>
+                
+                <div id="feedback-error" class="alert alert-error" style="display: none;">
+                    <!-- Error messages will be displayed here -->
+                </div>
+                
+                <form id="feedback-form" class="form">
+                    <div class="form-group">
+                        <label for="user-id">User ID</label>
+                        <input type="text" id="user-id" name="userId" placeholder="Enter your user ID" required>
+                        <small>Required. This identifies who is submitting the feedback.</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="feedback-content">Feedback</label>
+                        <textarea id="feedback-content" name="content" rows="6" placeholder="Share your thoughts, suggestions, or concerns..." required></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Submit Feedback</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Quiz App. All rights reserved.</p>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/feedback.js"></script>
+</body>
+</html>
+<div class="form-actions">
+    <button type="submit" class="btn btn-primary">Submit Feedback</button>
+    <a href="feedbacks.html" class="btn btn-secondary">View All Feedbacks</a>
+</div>

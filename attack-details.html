@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attack Details</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="users.html">Users</a></li>
+                <li><a href="attacks.html">Attacks</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container">
+            <div class="breadcrumbs">
+                <a href="attacks.html">Attacks</a> / <span id="attackTitle">Attack Details</span>
+            </div>
+            
+            <div id="loadingMessage">Loading attack details...</div>
+            
+            <div id="attackDetails" class="details-card" style="display: none;">
+                <h1 id="attackType"></h1>
+                
+                <div class="detail-group">
+                    <h3>Description</h3>
+                    <p id="attackDescription"></p>
+                </div>
+                
+                <div class="detail-group">
+                    <h3>Reported By</h3>
+                    <p id="attackReporter"></p>
+                </div>
+                
+                <div class="detail-group">
+                    <h3>Date Reported</h3>
+                    <p id="attackDate"></p>
+                </div>
+                
+                <div class="action-buttons">
+                    <a id="editLink" class="btn btn-primary">Edit</a>
+                    <button id="deleteBtn" class="btn btn-danger">Delete</button>
+                    <a href="attacks.html" class="btn btn-secondary">Back to List</a>
+                </div>
+            </div>
+            
+            <div id="errorMessage" class="message error" style="display: none;"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Attack Reporting System</p>
+    </footer>
+
+    <script src="js/attack-details.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attack Details | CyberDefender</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>CyberDefender</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="attacks.html" class="active">Attacks</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="feedbacks.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="attack-details-section">
+            <div class="container">
+                <div id="attack-details-container">
+                    <!-- Attack details will be populated here by JavaScript -->
+                    <div class="loading">Loading attack details...</div>
+                </div>
+                
+                <div class="actions">
+                    <a href="attacks.html" class="btn btn-secondary">Back to Attacks</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CyberDefender. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/attack-details.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attack Details</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Security Training Platform</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="feedbacks.html">Feedback</a></li>
+                <li><a href="attacks.html">Attacks</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="attack-details-container">
+            <h1 id="attack-title">Attack Details</h1>
+            <div id="attack-description" class="description"></div>
+            
+            <!-- Video section will be displayed after the description -->
+            <div id="video-container" class="video-container">
+                <h2>Attack Demonstration</h2>
+                <div id="video-player"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Security Training Platform</p>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/attack-details.js"></script>
+</body>
+</html>
